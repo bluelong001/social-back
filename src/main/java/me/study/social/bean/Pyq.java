@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Pyq {
+public class Pyq implements Comparable<Pyq>{
     @Id
     @GeneratedValue
     private Integer _id;
@@ -34,4 +34,11 @@ public class Pyq {
     private String pimgArr;
 
 
+    @Override
+    public int compareTo(Pyq o) {
+            if (this.addTime.isAfter(o.getAddTime()))
+                return -1;
+            return 1;
+
+    }
 }
