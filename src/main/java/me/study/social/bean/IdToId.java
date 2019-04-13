@@ -11,12 +11,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-//@Table(name="id_to_id")
+@Table(name="id_to_id")
 public class IdToId {
     @Id
     @GeneratedValue

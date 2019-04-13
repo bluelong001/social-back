@@ -1,5 +1,9 @@
 package me.study.social.service;
 
+import me.study.social.bean.IdToId;
+
+import java.util.Map;
+
 public interface SocketIOService {   //推送的事件
     public static final String PUSH_EVENT = "push_event";
 
@@ -9,6 +13,8 @@ public interface SocketIOService {   //推送的事件
     // 停止服务
     void stop();
 
-    // 推送信息
-//    void pushMessageToUser(PushMessage pushMessage);
+    //
+    void pushMessageToUser(IdToId idToId);
+
+    void pushMessageToUser(Map map);
 }
