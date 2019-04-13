@@ -25,5 +25,5 @@ public class ChatRelation {
     private transient List<ChatContent> chatContent;
     private Integer userAId;
     private Integer userBId;
-    private Integer chatContentIdArr;
+    private String chatContentIdArr;
 }

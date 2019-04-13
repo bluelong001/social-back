@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface PyqRepository extends JpaRepository<Pyq,Integer> {
     List<Pyq> findAllByWriterId(Integer writerId);
+
+    List<Pyq> findAllByContentLike(String searchText);
 }

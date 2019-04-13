@@ -33,7 +33,9 @@ public class Comment {
     @Builder.Default
     private Boolean toisn=true;
     @Transient
-    private transient Pyq pyq;
+    private transient String pyq;
+    private transient String footerimg;
+    private transient String headerimg;
     @Transient
     private transient List reply;
 }
