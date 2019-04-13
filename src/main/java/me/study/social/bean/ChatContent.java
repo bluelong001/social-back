@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SortComparator;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ChatContent {
+public class ChatContent implements Comparable<ChatContent>{
     @Id
     @GeneratedValue
     private Integer _id;
@@ -28,4 +29,10 @@ public class ChatContent {
     private String content ;
     @Builder.Default
     private Boolean unread=true;
+    @Override
+    public int compareTo(ChatContent chatContent) {
+        if (this.addTime.isBefore(chatContent.getAddTime()))
+            return 1;
+        return -1;
+    }
 }

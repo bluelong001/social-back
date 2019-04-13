@@ -113,6 +113,7 @@ public class ChatController {
             content.setChatWith(userInfoRepository.findById(content.getChatWithId()).orElse(null));
             chatContents.add(content);
         });
+        Collections.sort(chatContents);
         relation.setChatContent(chatContents);
         return Rest.builder().code(0).set("chatList", chatContents);
     }
