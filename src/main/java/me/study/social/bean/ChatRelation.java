@@ -4,11 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -25,5 +23,6 @@ public class ChatRelation {
     private transient List<ChatContent> chatContent;
     private Integer userAId;
     private Integer userBId;
+    @Column(columnDefinition="LONGTEXT")
     private String chatContentIdArr;
 }

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -27,6 +28,7 @@ public class Comment {
     @Column(name = "_to")
     private String to;
     private Integer pyqId;
+    @Column(columnDefinition="LONGTEXT")
     private String replyArr;
     @Builder.Default
     private Boolean isn=true;

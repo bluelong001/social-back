@@ -5,7 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SortComparator;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -26,6 +28,7 @@ public class ChatContent implements Comparable<ChatContent>{
     private Integer chatWithId;
     @Builder.Default
     private LocalDateTime addTime=LocalDateTime.now();
+    @Column(columnDefinition="LONGTEXT")
     private String content ;
     @Builder.Default
     private Boolean unread=true;
